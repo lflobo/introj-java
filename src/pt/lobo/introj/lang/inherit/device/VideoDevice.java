@@ -1,6 +1,6 @@
 package pt.lobo.introj.lang.inherit.device;
 
-public class VideoDevice extends Device {
+public abstract class VideoDevice extends Device {
 
 	private int brightness;
 
@@ -11,5 +11,7 @@ public class VideoDevice extends Device {
 	public void setBrightness(int brightness) {
 		this.brightness = brightness;
 	}
+	
+	public abstract void channelUp();
 
 }

@@ -2,9 +2,13 @@ package pt.lobo.introj.lang.inherit.device;
 
 public class HDVideoDevice extends VideoDevice {
 
-	private static final int MAX_BRIGHNESS = 256;
+	public static final int MAX_BRIGHNESS = 256;
 	
 	private boolean hd = false;
+	
+	public static void main(String[] args) {
+		System.out.println("xxx");
+	}
 
 	public boolean isHd() {
 		return hd;
@@ -28,4 +32,9 @@ public class HDVideoDevice extends VideoDevice {
 		super.setBrightness(brightness);
 	}
 
+	@Override
+	public void channelUp() {
+		// cenas
+	}
+	
 }
