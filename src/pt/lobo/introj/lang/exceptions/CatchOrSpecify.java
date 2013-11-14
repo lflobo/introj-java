@@ -1,6 +1,7 @@
 package pt.lobo.introj.lang.exceptions;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -9,10 +10,14 @@ public class CatchOrSpecify {
 
 	public static void main(String[] args) {
 		CatchOrSpecify cos = new CatchOrSpecify();
-		cos.test();
+		try {
+			cos.test();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public void test() {
+	public void test() throws FileNotFoundException {
 		// PROBLEMA: Catch or specify <- obrigatorio handle da exception
 		PrintWriter writer = new PrintWriter(new File("/tmp/output.txt"));
 		
@@ -27,13 +32,14 @@ public class CatchOrSpecify {
 	
 	public void test2() {
 		try {
+			// Alocar 1G RAM
 			pum();
-		} catch (IOException e) {
-			// Handle 1
 		} catch (SQLException e) {
+			// Handle 1
+		} catch (IOException e) {
 			// Handle 2
 		} finally {
-			// executado independentemente dos error
+			// libertar
 		}
 	}
 	

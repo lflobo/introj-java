@@ -1,5 +1,7 @@
 package pt.lobo.introj.lang.generics;
 
+import java.io.BufferedReader;
+
 import pt.lobo.introj.lang.inherit.device.Device;
 import pt.lobo.introj.lang.inherit.device.DiskDevice;
 import pt.lobo.introj.lang.inherit.device.HDVideoDevice;
@@ -8,9 +10,6 @@ public class Generics2<T extends Device> {
 
 	private T device;
 	
-	public Generics2() {
-	}
-
 	public T getDevice() {
 		return device;
 	}
